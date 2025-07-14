@@ -1,6 +1,8 @@
-/* Fondo con imagen y overlay */
+/* ===============================
+   FUENTES Y BASE
+================================= */
 body {
-  background: url('../Imagenes/fondo-verde-menta.jpg') no-repeat center center fixed;
+  background: url('../Imagenes/fondo.png') no-repeat center center fixed;
   background-size: cover;
   position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-/* Overlay para mejorar legibilidad */
+/* Overlay para mejorar legibilidad sobre el fondo */
 body::before {
   content: "";
   position: fixed;
@@ -27,9 +29,11 @@ nav, main, footer {
   z-index: 1;
 }
 
-/* Navbar */
+/* ===============================
+   NAVBAR
+================================= */
 .navbar {
-  background-color: #c6eddc;
+  background-color: rgba(198, 237, 220, 0.8); /* verde menta translúcido */
   box-shadow: 0 2px 8px rgba(21, 71, 52, 0.1);
 }
 
@@ -42,9 +46,10 @@ nav, main, footer {
   margin-right: 0.5rem;
 }
 
+.navbar-brand,
 .nav-link {
   color: #154734 !important;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -56,35 +61,57 @@ nav, main, footer {
   outline: none;
 }
 
-/* Main content */
+/* ===============================
+   MAIN CONTENT
+================================= */
 main {
   flex-grow: 1;
   margin: 3rem auto;
   max-width: 720px;
-  background: white;
+  background: rgba(255, 255, 255, 0.15); /* blanco translúcido */
   border-radius: 12px;
   padding: 2.5rem 2rem;
   box-shadow: 0 6px 15px rgba(21, 71, 52, 0.1);
   color: #154734;
 }
 
-h1 {
+/* Secciones internas con fondo transparente */
+.section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Titulares */
+h1, header h1 {
   text-align: center;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  color: #154734;
 }
 
-/* Lista de horarios */
+header p.lead {
+  color: #2c5f37;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   LISTAS Y TEXTOS
+================================= */
+/* Lista horarios */
 ul.list-group {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(21, 71, 52, 0.1);
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .horario-item {
   font-weight: 600;
   font-size: 1.1rem;
-  background: #f0faf4;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: #154734;
   padding: 1rem 1.5rem;
@@ -92,11 +119,11 @@ ul.list-group {
 }
 
 .horario-item:not(:last-child) {
-  border-bottom: 1px solid #d6e9d9;
+  border-bottom: 1px solid rgba(214, 233, 217, 0.8);
 }
 
 .horario-item:hover {
-  background-color: #d3f0da;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 /* Texto centrado */
@@ -106,7 +133,16 @@ ul.list-group {
   margin-bottom: 0.3rem;
 }
 
-/* Botón descarga */
+/* Texto final */
+p.fs-5 {
+  color: #2c5f37;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ===============================
+   BOTONES
+================================= */
 .btn-outline-success {
   width: 100%;
   font-weight: 600;
@@ -124,33 +160,85 @@ ul.list-group {
   outline: none;
 }
 
-/* Iframe mapa */
+/* Botones de sección texto centrado */
+section.text-center a.btn-success {
+  background-color: #37c68a;
+  border-color: #37c68a;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 15px rgba(55, 198, 138, 0.5);
+  border-radius: 12px;
+}
+
+section.text-center a.btn-success:hover,
+section.text-center a.btn-success:focus {
+  background-color: #2fa871;
+  border-color: #2fa871;
+  box-shadow: 0 8px 20px rgba(47, 168, 113, 0.7);
+  outline: none;
+}
+
+/* ===============================
+   TARJETAS (Cards)
+================================= */
+.card {
+  border-radius: 12px;
+  background: #f0faf4;
+  box-shadow: 0 6px 12px rgba(21, 71, 52, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #154734;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(21, 71, 52, 0.2);
+}
+
+.card-body i {
+  color: #37c68a;
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2c5f37;
+}
+
+/* ===============================
+   IFRAME (mapa)
+================================= */
 .ratio {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(21, 71, 52, 0.15);
   margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* Texto final */
-p.fs-5 {
-  color: #2c5f37;
-  font-style: italic;
-  font-weight: 600;
-}
-
-/* Footer */
+/* ===============================
+   FOOTER
+================================= */
 footer {
-  background-color: #c6eddc;
+  background-color: rgba(198, 237, 220, 0.4);
   text-align: center;
   padding: 1rem 0;
   font-weight: 600;
   color: #154734;
   box-shadow: inset 0 1px 3px rgba(21, 71, 52, 0.1);
   margin-top: auto;
+  backdrop-filter: saturate(180%) blur(10px);
 }
 
-/* Botón flotante WhatsApp */
+/* ===============================
+   BOTÓN FLOTANTE WHATSAPP
+================================= */
 #whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -174,7 +262,18 @@ footer {
   background-color: #1ebe57;
 }
 
-/* Responsive */
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .card-text {
+    font-size: 0.9rem;
+  }
+  header p.lead {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 576px) {
   main {
     margin: 2rem 1rem;
@@ -186,4 +285,32 @@ footer {
   p.fs-5 {
     font-size: 1rem;
   }
+  .section {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
 }
+/* ==============================
+   Botón flotante WhatsApp
+   ============================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+

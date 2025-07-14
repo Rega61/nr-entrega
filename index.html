@@ -10,183 +10,24 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    /* Reset y base */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #e6f3eb; /* verde menta claro */
-      color: #154734; /* verde menta oscuro */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #c6eddc; /* verde menta más claro */
-      box-shadow: 0 2px 8px rgba(21, 71, 52, 0.1);
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: #154734;
-    }
-
-    .navbar-brand img {
-      margin-right: 0.5rem;
-    }
-
-    .nav-link {
-      color: #154734 !important;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link.active,
-    .nav-link:focus {
-      color: #37c68a !important; /* verde menta brillante */
-      font-weight: 700;
-      outline: none;
-    }
-
-    /* Secciones */
-    main {
-      flex-grow: 1;
-    }
-
-    .section {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: white;
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 6px 15px rgba(21, 71, 52, 0.1);
-      color: #154734;
-    }
-
-    /* Inicio */
-    #inicio h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    #inicio p.lead {
-      font-size: 1.3rem;
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 2rem;
-      line-height: 1.5;
-    }
-
-    /* Botones */
-    .btn-principal {
-      background-color: #37c68a;
-      color: white;
-      padding: 0.6rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .btn-principal:hover,
-    .btn-principal:focus {
-      background-color: #2da46a;
-      outline: none;
-    }
-
-    /* Acerca */
-    #acerca h2 {
-      color: #154734;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    #acerca p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #c6eddc;
-      text-align: center;
-      padding: 1rem 0;
-      font-weight: 600;
-      color: #154734;
-      box-shadow: inset 0 1px 3px rgba(21, 71, 52, 0.1);
-      margin-top: auto;
-    }
-
-    /* WhatsApp flotante */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      width: 60px;
-      height: 60px;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float:hover,
-    .whatsapp-float:focus {
-      transform: scale(1.1);
-      outline: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 576px) {
-      #inicio h1 {
-        font-size: 2rem;
-      }
-
-      #inicio p.lead,
-      #acerca p {
-        font-size: 1rem;
-        padding: 0 1rem;
-      }
-
-      .section {
-        margin: 2rem 1rem;
-        padding: 1.5rem 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm" aria-label="Navegación principal">
+    <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#inicio">
-        <img src="./Imagenes/NR%20LOGO.png" alt="Logo NR" width="40" height="40" />
-        NR Reparaciones
+        <img src="./Imagenes/NR%20LOGO.png" alt="Logo NR Reparaciones" width="40" height="40" />
+        <span class="ms-2 fw-bold text-success">NR Reparaciones</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#inicio" aria-current="page">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="./pages/servicios.html">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="./pages/horarios.html">Horarios</a></li>
           <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
@@ -198,43 +39,39 @@
   </nav>
 
   <!-- Contenido principal -->
-  <main>
-    <section id="inicio" class="section">
-      <h1>NR Reparaciones</h1>
-      <p class="lead">
+  <main class="container my-5">
+    <section id="inicio" class="section" tabindex="-1">
+      <h1 class="text-center fw-bold mb-4">NR Reparaciones</h1>
+      <p class="lead text-center mb-4">
         Combinamos rapidez, calidad y atención para que tu tecnología nunca te falle cuando más la necesitás.
       </p>
-      <a href="./pages/contacto.html" class="btn-principal">Contáctanos</a>
+      <div class="text-center">
+        <a href="./pages/contacto.html" class="btn-principal btn btn-success btn-lg px-4 fw-semibold" role="button">Contáctanos</a>
+      </div>
     </section>
 
-    <section id="acerca" class="section">
-      <h2>🏪 Acerca de Nosotros</h2>
-      <p>En <strong>NR Reparaciones</strong> somos un pequeño local dedicado con pasión a la reparación de celulares, computadoras e impresoras.</p>
-      <p>Ofrecemos también venta de accesorios y equipos seleccionados, tanto nuevos como usados.</p>
-      <p>Nos destacamos por brindar atención personalizada, diagnósticos claros y soluciones rápidas para que tus dispositivos vuelvan a funcionar como nuevos.</p>
+    <section id="acerca" class="section mt-5" tabindex="-1">
+      <h2 class="text-center fw-bold mb-4">🏪 Acerca de Nosotros</h2>
+      <p>
+        En <strong>NR Reparaciones</strong> somos un pequeño local dedicado con pasión a la reparación de celulares, computadoras e impresoras.
+      </p>
+      <p>
+        Ofrecemos también venta de accesorios y equipos seleccionados, tanto nuevos como usados.
+      </p>
+      <p>
+        Nos destacamos por brindar atención personalizada, diagnósticos claros y soluciones rápidas para que tus dispositivos vuelvan a funcionar como nuevos.
+      </p>
     </section>
   </main>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/543426141503" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <img src="./Imagenes/whatsapp-icon.png" alt="WhatsApp" width="60" height="60" />
-  </a>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 NR Reparaciones. Todos los derechos reservados.</p>
-  </footer>
-
-<a 
-  id="whatsapp-float" 
-  href="https://wa.me/543426141503" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  aria-label="Contactar por WhatsApp"
->
-  <i class="bi bi-whatsapp"></i>
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/543426141503" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar vía WhatsApp">
+  <img src="./Imagenes/WhatsApp Logo.png" alt="Icono WhatsApp" />
 </a>
-
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3 mt-auto">
+    <p class="mb-0">&copy; 2025 NR Reparaciones. Todos los derechos reservados.</p>
+  </footer>
 
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
