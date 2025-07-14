@@ -1,205 +1,189 @@
-/* ==============================
-   Reset y configuración general
-   ============================== */
+/* Fondo con imagen y overlay */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80');
+  background: url('../Imagenes/fondo-verde-menta.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #e0e0e0;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: #154734;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0;
 }
 
+/* Overlay para mejorar legibilidad */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.75); /* capa oscura para contraste */
-  z-index: -1;
+  background: rgba(230, 243, 235, 0.75);
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* ==============================
-   Navbar
-   ============================== */
+/* Asegurar que contenido esté encima del overlay */
+nav, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Navbar */
 .navbar {
-  background-color: rgba(20, 40, 35, 0.85) !important;
-  backdrop-filter: saturate(180%) blur(10px);
+  background-color: #c6eddc;
+  box-shadow: 0 2px 8px rgba(21, 71, 52, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #154734;
 }
 
 .navbar-brand img {
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+  margin-right: 0.5rem;
 }
 
 .nav-link {
-  color: #a9d6c4 !important;  /* verde claro */
+  color: #154734 !important;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover,
-.nav-link.active {
-  color: #13c581 !important; /* verde menta */
+.nav-link.active,
+.nav-link:focus {
+  color: #37c68a !important;
   font-weight: 700;
+  outline: none;
 }
 
-/* ==============================
-   Secciones generales (.section)
-   ============================== */
-.section {
-  max-width: 700px;
-  margin: 0 auto;
-  background: rgba(209, 189, 189, 0.6);
-  padding: 40px 30px;
+/* Main content */
+main {
+  flex-grow: 1;
+  margin: 3rem auto;
+  max-width: 720px;
+  background: white;
   border-radius: 12px;
-  border: 2px solid #13c581;  /* borde verde menta */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  color: #d0e8df;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 6px 15px rgba(21, 71, 52, 0.1);
+  color: #154734;
 }
 
-/* ==============================
-   Sección Inicio (#inicio)
-   ============================== */
-#inicio {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  text-align: center;
-}
-
-#inicio h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #13c581; /* verde menta */
-  text-shadow: 2px 2px 6px rgba(80, 61, 61, 0.9);
-  margin-bottom: 1rem;
-}
-
-#inicio p {
-  font-size: 1.5rem;
-  max-width: 600px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-  color: #b2d8c0;
-}
-
-/* ==============================
-   Sección Acerca (#acerca)
-   ============================== */
-#acerca h2 {
-  color: #13c581;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-#acerca p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #c3e3d9;
-}
-
-/* ==============================
-   Títulos generales
-   ============================== */
 h1 {
-  color: #13c581;
+  text-align: center;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
 }
 
-/* ==============================
-   Listas y horarios
-   ============================== */
-.list-group-flush {
-  color: #d0e8df;
+/* Lista de horarios */
+ul.list-group {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(21, 71, 52, 0.1);
+  overflow: hidden;
 }
 
 .horario-item {
-  background: transparent !important;
-  border: none !important;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-/* Texto final en horarios */
-.mensaje-final {
-  color: #b2d8c0;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-/* ==============================
-   Footer
-   ============================== */
-footer, .footer {
-  background-color: rgba(20, 40, 35, 0.85);
-  color: #a9d6c4;
-  box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
-  padding: 15px 0;
-  margin-top: auto;
-  text-align: center;
-}
-
-/* ==============================
-   Botones
-   ============================== */
-.btn-principal {
-  background-color: #13c581;
-  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: #f0faf4;
   border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
+  color: #154734;
+  padding: 1rem 1.5rem;
   transition: background-color 0.3s ease;
-  cursor: pointer;
-  display: inline-block;
 }
 
-.btn-principal:hover {
-  background-color: #0e8c65;
+.horario-item:not(:last-child) {
+  border-bottom: 1px solid #d6e9d9;
 }
 
-.btn-blanco {
-  background-color: white;
-  color: #13c581;
-  border: 2px solid #13c581;
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
+.horario-item:hover {
+  background-color: #d3f0da;
+}
+
+/* Texto centrado */
+.text-center p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Botón descarga */
+.btn-outline-success {
+  width: 100%;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(19, 197, 129, 0.3);
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(55, 198, 138, 0.3);
 }
 
-.btn-blanco:hover,
-.btn-blanco:focus {
-  background-color: #13c581;
+.btn-outline-success:hover,
+.btn-outline-success:focus {
+  background-color: #37c68a;
   color: white;
-  box-shadow: 0 6px 12px rgba(19, 197, 129, 0.6);
+  box-shadow: 0 6px 12px rgba(55, 198, 138, 0.6);
+  outline: none;
 }
 
-/* ==============================
-   Responsividad
-   ============================== */
+/* Iframe mapa */
+.ratio {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(21, 71, 52, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+/* Texto final */
+p.fs-5 {
+  color: #2c5f37;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background-color: #c6eddc;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: 600;
+  color: #154734;
+  box-shadow: inset 0 1px 3px rgba(21, 71, 52, 0.1);
+  margin-top: auto;
+}
+
+/* Botón flotante WhatsApp */
+#whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+}
+
+#whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+
+/* Responsive */
 @media (max-width: 576px) {
-  #inicio h1 {
-    font-size: 2.2rem;
+  main {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
   }
-
-  #inicio p {
-    font-size: 1.1rem;
-    padding: 0 10px;
+  .horario-item {
+    font-size: 1rem;
   }
-
-  .section {
-    padding: 25px 15px;
+  p.fs-5 {
+    font-size: 1rem;
   }
 }
