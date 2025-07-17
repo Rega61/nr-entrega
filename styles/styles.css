@@ -1,8 +1,6 @@
-/* ===============================
-   FUENTES Y BASE
-================================= */
+
 body {
-  background: url('../Imagenes/fondo.png') no-repeat center center fixed;
+  background: url('../imagenes/fondo.png') no-repeat center center fixed;
   background-size: cover;
   position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +16,7 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(230, 243, 235, 0.75);
+  background: rgba(230, 243, 235, 0.25);
   pointer-events: none;
   z-index: 0;
 }
@@ -33,7 +31,7 @@ nav, main, footer {
    NAVBAR
 ================================= */
 .navbar {
-  background-color: rgba(198, 237, 220, 0.8); /* verde menta translúcido */
+  background-color: rgba(198, 237, 220, 0.5); /* verde menta translúcido */
   box-shadow: 0 2px 8px rgba(21, 71, 52, 0.1);
 }
 
@@ -314,3 +312,34 @@ footer {
   background-color: #1ebe57;
 }
 
+.btn-principal:hover {
+    animation-name: bounceIn !important;
+    animation-duration: 1s;
+  }
+
+ #NR h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #198754;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    animation: fadeDown 2s ease-in-out;
+  }
+
+  #NR p.lead {
+    font-size: 1.25rem;
+    color: #333;
+  }
+
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
